@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Clock</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="app-header__title">World Clock</h1>
+    <div class="app-header__controls">
+      <input
+        id="search-input"
+        type="search"
+        class="search-input"
+        placeholder="Rechercher une ville, une région, un fuseau..."
+        aria-label="Rechercher un fuseau horaire"
+      />
+      <button
+        id="format-toggle"
+        type="button"
+        class="format-toggle"
+        aria-label="Basculer le format horaire 12h/24h"
+      >24h</button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section id="compare-panel" class="compare-panel hidden" aria-label="Comparateur de fuseaux">
+      <h2 class="section-title">Comparateur</h2>
+      <div id="compare-cards" class="compare-cards"></div>
+    </section>
+
+    <section id="favorites-section" class="favorites-section hidden" aria-label="Fuseaux favoris">
+      <h2 class="section-title">Favoris</h2>
+      <div id="favorites-list" class="tz-list"></div>
+    </section>
+
+    <section class="timezones-section" aria-label="Tous les fuseaux horaires">
+      <h2 class="section-title">Tous les fuseaux</h2>
+      <div id="timezones-list" class="tz-list"></div>
+      <p id="no-results" class="no-results hidden">Aucun fuseau ne correspond à votre recherche.</p>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
