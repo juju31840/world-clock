@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \".claude/hooks/block-console-log.ps1\"",
+            "timeout": 15,
+            "statusMessage": "Recherche de console.log() dans les fichiers .js stagés..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \".claude/hooks/check-basic-syntax.ps1\"",
+            "timeout": 15,
+            "statusMessage": "Vérification basique de syntaxe..."
+          }
+        ]
+      }
+    ]
+  }
+}
