@@ -82,7 +82,7 @@ function createRow(entry) {
 
   actions.append(compareBtn, starBtn);
 
-  row.append(flagEl, info, timeWrap, actions);
+  row.append(flagEl, timeWrap, info, actions);
 
   return { row, timeEl, offsetEl, compareBtn, starBtn };
 }
