@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \".claude/hooks/block-console-log.ps1\"",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/block_console_log.py\"",
             "timeout": 15,
             "statusMessage": "Recherche de console.log() dans les fichiers .js stagés..."
           }
@@ -19,7 +19,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \".claude/hooks/check-basic-syntax.ps1\"",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/check_basic_syntax.py\"",
             "timeout": 15,
             "statusMessage": "Vérification basique de syntaxe..."
           }
